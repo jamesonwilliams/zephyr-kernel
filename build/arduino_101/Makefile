@@ -10,6 +10,12 @@ ble_app := $(ZEPHYR_BASE)/samples/bluetooth/peripheral
 
 image: x86_image arc_image ble_image 
 
+flash:
+	@echo >&2 "Not yet supported, coming soon."
+
+clean:
+	@rm -r -f out/
+
 ble_image:
 	mkdir -p $(O)/ble
 	make -C $(ble_app) ARCH=arm O=$(O)/ble BOARD=basic_cortex_m3 
